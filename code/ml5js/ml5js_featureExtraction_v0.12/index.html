@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  </link>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
+  <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
+</head>
+
+<body>
+
+  <div id="videoContainer"></div>
+  <div id="buttons">
+    <p><span id="modelStatus">Loading MobileNet</span></p>
+   
+    <button id="Class1"></button>
+    <span id="AmountClass1"> 0</span>
+
+    <button id="Class2"></button>
+    <span id="AmountClass2"> 0</span>
+    <button id="Train">Train</button>
+    </br>
+    <button id="Save">Save Model</button>
+    <label for="avatar">Load Model:</label> <input type="file" id="Load" multiple />
+  </div>
+
+  <script src="sketch.js"></script>
+  <script>
+     document.getElementById('Class1').textContent = `Add Image to ${class1Name}`;
+     document.getElementById('Class2').textContent = `Add Image to ${class2Name}`;
+  </script>
+</body>
+
+</html>

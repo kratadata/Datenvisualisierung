@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>NeuralNetwork Classification Training</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+	<script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div id="videoContainer"></div>
+	<div id="buttons">
+		<button id="AddKeypoints">Add Keypoints</button>
+		<span id="AmountKeypoints"> 0 </span>
+		<input type="text" id="Input" placeholder="Enter classification" />
+		</br>
+		<button id="Train">Train</button>
+		<button id="Classify">Classify</button>
+		</br>
+		<button id="Save">Save Model</button>
+		<label for="avatar">Load Model:</label> <input type="file" id="Load" multiple />
+	</div>
+	<script src="sketch.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+
+body {
+    background: white;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+#buttons button {
+    background-color: white;
+    padding: 5px;
+    margin:5px;
+    color: black;
+    border: 1px solid black;
+}
+ 
+#buttons input {
+    background-color: white;
+    padding: 5px;
+    margin:5px;
+    color: black;
+    border: 1px solid black;
+}
+
+#buttons .removeButton{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+
+}
+ 

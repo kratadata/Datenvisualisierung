@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>NeuralNetwork Regression Training</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+	<script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div id="videoContainer"></div>
+	<div id="buttons">
+		<button id="AddPose"> Add Pose Keypoints</button>
+		<span id="AmountPoses"> 0 </span>
+		</br>
+		<button id="Train">Train</button>
+		<button id="Predict">Predict</button>
+		</br>
+		<button id="Save">Save Model</button>
+		<label for="avatar">Load Model:</label> <input type="file" id="Load" multiple />
+	</div>
+	<script src="sketch.js"></script>
+</body>
+
+</html>
