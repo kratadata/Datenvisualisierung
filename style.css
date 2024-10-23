@@ -67,7 +67,7 @@ p {
 .current-day {
   margin-bottom: 2.5rem;
   outline-style: solid; 
-  outline-width: 0.1rem;
+  outline-width: 0.15rem;
   outline-offset: .6rem;
   outline-color: var(--header);
 }
