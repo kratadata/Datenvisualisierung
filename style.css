@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap&family=Rubik+Iso&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap&family=Rubik+Iso&&family=Rubik+Broken+Fax&display=swap');
 
 :root {
   font-family: "Outfit", sans-serif;
@@ -48,15 +48,15 @@ aside {
 }
 
 h1 {
-  font-family: "Rubik Iso", cursive;
-  font-size: 2.5rem;
+  font-family: "Rubik Broken Fax", cursive;
+  font-size: 3.0rem;
   font-weight: 400;
   margin: 0 0 0.5rem 0;
   color: var(--accent-col);
 }
 
 h2 {
-  font-family: "Rubik Iso", cursive;
+  font-family: "Rubik Broken Fax", cursive;
   font-size: 2.0rem;
   font-weight: 400;
   color: var(--inverse-font-col);
