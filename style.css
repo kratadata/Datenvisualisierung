@@ -1,54 +1,81 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap&family=Rubik+Iso&display=swap');
 
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 100%;
-  --bg-col: rgb(255, 255, 255);
-  --fg-col: rgb(0, 0, 0);
-  --inverse-fg:black;
-  --inverse-bg:white;
+  --bg-col: #9d9c9c;
+  --fg-col: #ffffff;
+  --accent-col:#bbff28;
+  --font-col:#000000;
+  --inverse-font-col:#ffffff;
+  --border-col: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.01);
 }
 
 body {
   padding: 1rem;
   color: var(--fg-col);
-  background-color: var(--bg-col);
+  background: var(--bg-col);
+  min-height: 100vh;
+  line-height: 1.5;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+#neural-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 1.0;
 }
 
 header,
 aside {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
-aside p,
-aside li {
-  font-size: 0.85rem;
-}
-
 
 h1 {
-  font-size: 1.25rem;
-  margin: 0 0 0.5rem;
+  font-family: "Rubik Iso", cursive;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem 0;
+  color: var(--accent-col);
 }
 
 h2 {
-  font-size:2rem;
-  margin: 0;
+  font-family: "Rubik Iso", cursive;
+  font-size: 2.0rem;
+  font-weight: 400;
+  color: var(--inverse-font-col);
 }
 
 h3 {
-  font-size: unset;
-  margin: unset;
+  font-family: "Rubik Iso", cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--accent-col);
 }
 
-h4 {
-  font-size: unset;
-  margin: unset;
-}
+h4{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--accent-col);
 
-h5{
-  font-size: 0.6rem;
-  margin: unset;
 }
 
 ul {
@@ -58,43 +85,88 @@ ul {
 ul,
 p {
   margin: 0.2rem 0;
+  color: var(--font-col);
+}
+
+a {
+  color: var(--font-col);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-col);
+}
+
+a:hover {
+  color: var(--inverse-font-col);
+  border-bottom-color: var(--accent-col);
+}
+
+li {
+  font-size: 0.8rem;
 }
 
 .day {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border-col);
+  border-radius: 12px;
+  padding: 2rem;
 }
 
 .current-day {
-  margin-bottom: 2.5rem;
-  outline-style: solid; 
-  outline-width: 0.15rem;
-  outline-offset: .6rem;
-  outline-color: var(--header);
+  margin-bottom: 1rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 5px solid var(--accent-col);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
 .date {
-  background: var(--inverse-fg);
-  color: var(--inverse-bg);
-  padding: 0.25rem;
+  background: var(--font-col);
+  color: var(--fg-col);
   display: inline-block;
   letter-spacing: 0.5px;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.85rem;
 }
 
 .description {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
 }
+
+.exercise-box {
+  background: rgba(14, 14, 14, 0.1);
+  border: 1px solid var(--accent-col);
+  padding: 1rem;
+  font-size: 0.875rem;
+  margin: 1.5rem 0;
+}
+
+.exercise-box li,
+.exercise-box p,
+.exercise-box h4,
+.exercise-box a,
+.exercise-box b {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
 
 
 @media (min-width: 700px) {
   :root {
-    font-size: 130%;
+    font-size: 110%;
   }
   body {
-    padding: 2rem 5% 3rem 3rem;
+    padding: 3rem 5% 4rem 3rem;
     display: grid;
-    grid-gap: 4rem 3vw;
+    grid-gap: 1rem 3vw;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
   }
@@ -109,45 +181,37 @@ p {
     grid-row: 1/2;
   }
   header,
-  footer {
+  footer,
+  .current-day-highlight {
     grid-column: 1/-1;
+  }
+  .current-day-highlight {
+    grid-row: 2/3;
   }
   main {
     grid-column: 1/2;
-    grid-row: 2/-1;
+    grid-row: 3/-1;
   }
   aside {
     grid-column: 2/-1;
-    grid-row: 2/-1;
+    grid-row: 3/-1;
     align-self: start;
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-col);
+    border-radius: 12px;
+    padding: 2rem;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    font-family: "Jost";
-    --header: hsl(238, 100%, 50%);
-    letter-spacing: 0.5px;
-    font-weight: 400;
-  }
-  h3 {
-    color: var(--header);
-  }
-  h2, h4 {
-    color: var(--inverse-bg);
-    background: var(--inverse-fg);
-  }
-  aside {
-    padding: 0.25rem 0.5rem;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5{
-    font-weight: unset;
-  }
-  a{
-    color: var(--fg-col);
-  }
+/* Neural Network Shader Styles */
+#neural-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
 }
